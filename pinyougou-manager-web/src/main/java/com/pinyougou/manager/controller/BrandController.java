@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author YaphetS
@@ -84,6 +85,14 @@ public class BrandController {
 	@RequestMapping("/search")
 	public PageResult search(@RequestBody TbBrand tbBrand,int pageNum,int pageSize){
 		return brandService.findPage(tbBrand,pageNum,pageSize);
+	}
+
+	/**
+	 * 品牌下拉列表数据
+	 */
+	@RequestMapping("/selectOptionList")
+	public List<Map> selectOptionList(){
+		return brandService.selectOptionList();
 	}
 
 }
