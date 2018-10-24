@@ -83,6 +83,13 @@
             <scope>provided</scope>
         </dependency>
 
+        <dependency>
+            <groupId>com.pinyougou</groupId>
+            <artifactId>pinyougou-sellergoods-interface</artifactId>
+            <version>0.0.5-SNAPSHOT</version>
+        </dependency>
+
+
 
 
     </dependencies>

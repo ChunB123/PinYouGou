@@ -34,12 +34,14 @@ public class BrandServiceImpl implements BrandService {
 		//使用MyBatis的pageHelper插件
 		PageHelper.startPage(pageNum,pageSize);
 		Page<TbBrand> page=(Page<TbBrand>)brandMapper.selectByExample(null);
-
+		System.out.println("service1");
 		return new PageResult(page.getTotal(),page.getResult());
 	}
 
 	@Override
 	public void add(TbBrand tbBrand) {
+
+
 		brandMapper.insert(tbBrand);
 	}
 
@@ -75,6 +77,7 @@ public class BrandServiceImpl implements BrandService {
 			}
 		}
 		Page<TbBrand> page=(Page<TbBrand>)brandMapper.selectByExample(tbBrandExample);
+		System.out.println("service1");
 		return new PageResult(page.getTotal(),page.getResult());
 
 	}
