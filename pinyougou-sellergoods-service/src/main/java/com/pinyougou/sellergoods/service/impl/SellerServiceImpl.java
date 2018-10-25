@@ -163,5 +163,18 @@ public class SellerServiceImpl implements SellerService {
 		Page<TbSeller> page= (Page<TbSeller>)sellerMapper.selectByExample(example);		
 		return new PageResult(page.getTotal(), page.getResult());
 	}
-	
+
+	/**
+	 * 修改状态码
+	 * @param sellerID
+	 * @param status
+	 */
+	@Override
+	public void updateStatus(String sellerId, String status) {
+		TbSeller tbSeller=sellerMapper.selectByPrimaryKey(sellerId);
+		tbSeller.setStatus(status);
+		sellerMapper.updateByPrimaryKey(tbSeller);
+	}
+
+
 }
